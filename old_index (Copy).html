@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Lukas Hörmann</title>
+<style>
+  /* Reset some default spacing */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Body */
+  body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    scroll-behavior: smooth; /* smooth scrolling */
+  }
+
+  /* Navigation bar */
+  nav {
+    position: sticky; /* stays at top */
+    top: 0;
+    background-color: #636363;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+    z-index: 1000;
+    flex-wrap: wrap; /* wrap on small screens */
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.2s, transform 0.2s;
+  }
+
+  nav a:hover {
+    background-color: #b4b4b4;
+    transform: scale(1.05);
+  }
+
+  /* Sections */
+  section {
+    padding: 4rem 2rem;
+    scroll-margin-top: 75px;
+  }
+
+  #home {
+    background-color: #f0f0f0;
+  }
+
+  #about {
+    background-color: #f0f0f0;
+  }
+
+  #projects {
+    background-color: #f0f0f0;
+  }
+
+  #contact {
+    background-color: #f0f0f0;
+  }
+
+  /* Profile image */
+  .profile img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 0; /* square */
+  }
+
+  .profile {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  h1 {
+    margin-bottom: 0.5rem;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- Navigation bar -->
+<nav>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- Home section -->
+<section id="home">
+  <div class="profile">
+    <img src="images/2023_portrait.png" alt="Photo of Lukas Hörmann">
+    <div>
+      <h1>Lukas Hörmann</h1>
+      <p>I am a researcher in computational physics and chemistry, working on adsorbate surface dynamics and energy dissipation via electron-phonon and phonon-phonon coupling. The tools of my trade are machine learning interatomic potentials, quantum-mechanical simulations, and non-equilibrium molecular dynamics.</p>
+    </div>
+  </div>
+</section>
+
+<!-- About section -->
+<section id="about">
+  <h2>About Me</h2>
+  <p>Here you can write more about your research, experience, and interests.</p>
+</section>
+
+<!-- Projects section -->
+<section id="projects">
+  <h2>Projects</h2>
+  <ul>
+    <li><a href="https://github.com/lukas-hoermann/project1">Project 1</a></li>
+    <li><a href="https://github.com/lukas-hoermann/project2">Project 2</a></li>
+    <li><a href="https://github.com/lukas-hoermann/project3">Project 3</a></li>
+  </ul>
+</section>
+
+<!-- Contact section -->
+<section id="contact">
+  <h2>Links</h2>
+  <div class="links">
+    <a href="mailto:lukas.hoermann@univie.ac.at">Email</a>
+    <a href="https://github.com/lukas-hoermann">GitHub</a>
+    <a href="https://scholar.google.com/citations?user=y8Mm5WQAAAAJ&hl=en&oi=ao">Google Scholar</a>
+    <a href="https://orcid.org/0000-0003-4150-1592">ORCID</a>
+  </div>
+</section>
+
+</body>
+</html>
+
