@@ -40,3 +40,30 @@ a { color: #0366d6; }
   color: #012a55;
 }
 
+/* Dark mode overrides */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #121212;
+    color: #e0e0e0;
+  }
+
+  a {
+    color: #4ea3ff;
+  }
+
+  .project {
+    background: #1e1e1e;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+  }
+
+  .contact-links a {
+    background: #4ea3ff;
+    color: #121212;
+  }
+
+  .contact-links a:hover {
+    background: #0366d6;
+    color: #ffffff;
+  }
+}
+
