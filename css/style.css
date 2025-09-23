@@ -16,22 +16,6 @@ a { color: #0366d6; }
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
-/* Navbar */
-.navbar {
-  background: #0366d6;   /* blue */
-}
-
-.navbar a {
-  color: #ffffff;        /* white text on blue bar */
-  text-decoration: none;
-  padding: 0.8rem 1rem;
-  display: inline-block;
-}
-
-.navbar a:hover {
-  background: #024ea2;   /* darker blue on hover */
-}
-
 /* Links in content */
 .project:hover {
   transform: translateY(-4px);
@@ -80,19 +64,6 @@ a { color: #0366d6; }
   body {
     background: #121212;
     color: #e0e0e0;
-  }
-
-  /* Navbar */
-  .navbar {
-    background: #ff9800;  /* orange bar */
-  }
-
-  .navbar a {
-    color: #121212;       /* dark text on orange */
-  }
-
-  .navbar a:hover {
-    color: #ffffff;       /* white on hover */
   }
 
   /* Links in content */
