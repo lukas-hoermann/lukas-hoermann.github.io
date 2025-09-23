@@ -40,6 +40,13 @@ a { color: #0366d6; }
   color: #012a55;
 }
 
+.project img {
+  width: 100%;       /* fill the full width of the box */
+  height: auto;      /* keep aspect ratio */
+  object-fit: cover; /* optional: crop instead of squish */
+  border-radius: 8px;
+}
+
 /* Dark mode overrides */
 @media (prefers-color-scheme: dark) {
   body {
