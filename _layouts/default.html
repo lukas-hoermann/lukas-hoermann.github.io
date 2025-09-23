@@ -3,10 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <title>{{ site.title }}</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  {{ content }}
-</body>
+  <link rel="stylesheet" href="css/style.css"> 
+  <style>
+  body { 
+    margin: 0;
+    font-family: Arial, sans-serif; 
+    scroll-behavior: smooth; /* enables smooth scrolling */ 
+    }
+  section { 
+    padding: 4rem 2rem; 
+    min-height: 20vh; 
+    scroll-margin-top: 80px; /* prevents navbar overlap */ 
+    }
+  .profile img { 
+    width: 150px; 
+    height: 150px; 
+    object-fit: cover; 
+    border-radius: 0; 
+    } 
+  .profile { 
+    display: flex; 
+    gap: 1.5rem; 
+    align-items: center; 
+  }
+</style> 
+</head> 
+  <body>
+    {{ content }} 
+  </body> 
 </html>
-
