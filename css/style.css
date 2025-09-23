@@ -54,22 +54,54 @@ a { color: #0366d6; }
     color: #e0e0e0;
   }
 
-  a {
-    color: #4ea3ff;
+  /* Navbar */
+  .navbar {
+    background: #ff9800;  /* orange bar */
   }
 
+  .navbar a {
+    color: #121212;       /* dark text on orange */
+  }
+
+  .navbar a:hover {
+    color: #ffffff;       /* white on hover */
+  }
+
+  /* Links in content */
+  a {
+    color: #ff9800;
+  }
+
+  a:hover {
+    color: #ffa733;
+  }
+
+  /* Project cards */
   .project {
     background: #1e1e1e;
     box-shadow: 0 4px 8px rgba(0,0,0,0.6);
   }
 
+  .project h3 {
+    color: #ff9800;
+  }
+
+  .project a {
+    color: #ff9800;
+  }
+
+  .project a:hover {
+    color: #ffa733;
+  }
+
+  /* Contact buttons */
   .contact-links a {
-    background: #4ea3ff;
+    background: #ff9800;
     color: #121212;
   }
 
   .contact-links a:hover {
-    background: #0366d6;
+    background: #ffa733;
     color: #ffffff;
   }
 }
