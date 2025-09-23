@@ -1,110 +1,102 @@
-body { background: #f9f9f9; }
-section { border-bottom: 1px solid #ccc; }
-a { color: #0366d6; }
-
-.projects-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-}
-
-.project {
+/* ---------- Base Styles (Light Mode) ---------- */
+body { 
+  margin: 0; 
+  font-family: Arial, sans-serif; 
+  scroll-behavior: smooth; 
   background: #ffffff;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
-  transition: transform 0.2s, box-shadow 0.2s;
+  color: #222222;
 }
 
-/* Navbar */
-.navbar {
-  background: #0366d6;   /* blue */
+nav { 
+  position: sticky; 
+  top: 0; 
+  background-color: #0366d6; /* blue navbar */
+  display: flex; 
+  gap: 1rem; 
+  padding: 1rem; 
+  flex-wrap: wrap; 
+  z-index: 1000; 
 }
 
-.navbar a {
-  color: #ffffff;        /* white text on blue bar */
-  text-decoration: none;
-  padding: 0.8rem 1rem;
-  display: inline-block;
+nav a { 
+  color: white; 
+  text-decoration: none; 
+  padding: 0.5rem 1rem; 
+  border-radius: 5px; 
+  transition: 0.2s; 
 }
 
-.navbar a:hover {
-  background: #024ea2;   /* darker blue on hover */
+nav a:hover { 
+  background-color: #024ea2; 
+  transform: scale(1.05); 
 }
 
-/* Links in content */
-.project:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+section { 
+  padding: 4rem 2rem; 
+  min-height: 20vh; 
+  scroll-margin-top: 80px; 
 }
 
-.project a {
-  display: inline-block;
-  margin-top: 0.5rem;
+.profile img { 
+  width: 150px; 
+  height: 150px; 
+  object-fit: cover; 
+  border-radius: 0; 
+}
+
+.profile { 
+  display: flex; 
+  gap: 1.5rem; 
+  align-items: center; 
+}
+
+/* Links and project accents */
+a {
   color: #0366d6;
   text-decoration: none;
-  font-weight: bold;
-  transition: color 0.2s;
 }
-
-.project a:hover {
+a:hover {
   color: #024ea2;
 }
 
-/* Project headers */
 .project h3 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
   color: #0366d6;
 }
 
-/* Contact buttons */
 .contact-links a {
   background: #0366d6;
   color: #ffffff;
 }
-
 .contact-links a:hover {
   background: #024ea2;
 }
 
-.project img {
-  width: 100%;       /* fill the full width of the box */
-  height: auto;      /* keep aspect ratio */
-  object-fit: cover; /* optional: crop instead of squish */
-  border-radius: 8px;
-}
-
-/* Dark mode overrides */
+/* ---------- Dark Mode ---------- */
 @media (prefers-color-scheme: dark) {
   body {
     background: #121212;
     color: #e0e0e0;
   }
 
-  /* Navbar */
-  .navbar {
-    background: #ff9800;  /* orange bar */
+  nav {
+    background-color: #ff9800;
   }
 
-  .navbar a {
-    color: #121212;       /* dark text on orange */
+  nav a {
+    color: #121212;
   }
 
-  .navbar a:hover {
-    color: #ffffff;       /* white on hover */
+  nav a:hover {
+    color: #ffffff;
   }
 
-  /* Links in content */
   a {
     color: #ff9800;
   }
-
   a:hover {
     color: #ffa733;
   }
 
-  /* Project cards */
   .project {
     background: #1e1e1e;
     box-shadow: 0 4px 8px rgba(0,0,0,0.6);
@@ -117,17 +109,14 @@ a { color: #0366d6; }
   .project a {
     color: #ff9800;
   }
-
   .project a:hover {
     color: #ffa733;
   }
 
-  /* Contact buttons */
   .contact-links a {
     background: #ff9800;
     color: #121212;
   }
-
   .contact-links a:hover {
     background: #ffa733;
     color: #ffffff;
