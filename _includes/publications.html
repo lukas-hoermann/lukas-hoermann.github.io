@@ -1,0 +1,38 @@
+<section id="publications">
+  <h2>Publications</h2>
+  <ul id="orcid-publications">
+    <li>Loading publications from ORCID…</li>
+  </ul>
+</section>
+
+<script>
+(async function() {
+  const orcid = "0000-0003-4150-1592";
+  const url = `https://pub.orcid.org/v3.0/${orcid}/works`;
+
+  try {
+    const response = await fetch(url, { headers: { "Accept": "application/json" }});
+    const data = await response.json();
+
+    const list = document.getElementById("orcid-publications");
+    list.innerHTML = "";
+
+    // loop through ORCID works
+    data.group.forEach(work => {
+      const summary = work["work-summary"][0];
+      const title = summary["title"]["title"].value;
+      const year = summary["publication-date"]?.year?.value || "n.d.";
+      const url = summary["external-ids"]["external-id"][0]?.["external-id-url"]?.value || null;
+
+      const li = document.createElement("li");
+      li.innerHTML = `<strong>${title}</strong> (${year})${url ? ` – <a href="${url}" target="_blank">Link</a>` : ""}`;
+      list.appendChild(li);
+    });
+  } catch (err) {
+    console.error("ORCID fetch error:", err);
+    document.getElementById("orcid-publications").innerHTML =
+      "<li>Could not load publications from ORCID.</li>";
+  }
+})();
+</script>
+
