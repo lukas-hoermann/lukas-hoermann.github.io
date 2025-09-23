@@ -72,7 +72,7 @@ a { color: #0366d6; }
   }
 
   a:hover {
-    color: #ffa733;
+    color: #ffb24d;
   }
 
   /* Project cards */
@@ -90,7 +90,7 @@ a { color: #0366d6; }
   }
 
   .project a:hover {
-    color: #ffa733;
+    color: #ffb24d;
   }
 
   /* Contact buttons */
@@ -100,7 +100,7 @@ a { color: #0366d6; }
   }
 
   .contact-links a:hover {
-    background: #ffa733;
+    background: #ffb24d;
     color: #ffffff;
   }
 }
