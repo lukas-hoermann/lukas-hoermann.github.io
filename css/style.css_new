@@ -1,0 +1,189 @@
+/* ---------- Base Styles (Light Mode) ---------- */
+body { 
+  margin: 0; 
+  font-family: Arial, sans-serif; 
+  scroll-behavior: smooth; 
+  background: #ffffff;
+  color: #222222;
+}
+
+/* ---------- Navbar ---------- */
+nav { 
+  position: sticky; 
+  top: 0; 
+  background-color: #0366d6; /* blue navbar */
+  display: flex; 
+  gap: 1rem; 
+  padding: 1rem; 
+  flex-wrap: wrap; 
+  z-index: 1000; 
+}
+
+nav a { 
+  color: white; 
+  text-decoration: none; 
+  padding: 0.5rem 1rem; 
+  border-radius: 5px; 
+  transition: 0.2s; 
+}
+
+nav a:hover { 
+  background-color: #024ea2; 
+  transform: scale(1.05); 
+}
+
+/* ---------- Sections ---------- */
+section { 
+  padding: 4rem 2rem; 
+  min-height: 20vh; 
+  scroll-margin-top: 80px; 
+}
+
+/* ---------- Profile ---------- */
+.profile img { 
+  width: 150px; 
+  height: 150px; 
+  object-fit: cover; 
+  border-radius: 0; 
+}
+
+.profile { 
+  display: flex; 
+  gap: 1.5rem; 
+  align-items: center; 
+}
+
+/* ---------- Links ---------- */
+a {
+  color: #0366d6;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a:hover {
+  color: #024ea2;
+}
+
+/* ---------- Projects ---------- */
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.project {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: center;
+}
+
+.project:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.project img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.project h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: #0366d6;
+}
+
+.project a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #024ea2;
+  font-weight: bold;
+}
+
+.project a:hover {
+  color: #012a55;
+}
+
+/* ---------- Contact ---------- */
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.contact-links a {
+  background: #0366d6;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.contact-links a:hover {
+  background: #024ea2;
+  transform: translateY(-2px);
+}
+
+/* ---------- Dark Mode ---------- */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #121212;
+    color: #e0e0e0;
+  }
+
+  nav {
+    background-color: #ff9800;
+  }
+
+  nav a {
+    color: #121212;
+  }
+
+  nav a:hover {
+    color: #ffffff;
+  }
+
+  a {
+    color: #ff9800;
+  }
+
+  a:hover {
+    color: #ffa733;
+  }
+
+  .project {
+    background: #1e1e1e;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+  }
+
+  .project h3 {
+    color: #ff9800;
+  }
+
+  .project a {
+    color: #ff9800;
+  }
+
+  .project a:hover {
+    color: #ffa733;
+  }
+
+  .contact-links a {
+    background: #ff9800;
+    color: #121212;
+  }
+
+  .contact-links a:hover {
+    background: #ffa733;
+    color: #ffffff;
+  }
+}
+
