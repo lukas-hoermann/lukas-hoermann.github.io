@@ -122,6 +122,19 @@ a { color: #0366d6; }
   border-radius: 8px;     /* Optional: gives the diagram slightly rounded corners */
 }
 
+.content-img-fade {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  
+  /* Adds the fade-out effect at the bottom */
+  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
+
 /* Ensure the profile text doesn't have any strange margins overriding the wrapper */
 .profile {
   width: 100%;
