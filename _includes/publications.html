@@ -1,8 +1,10 @@
 <section id="publications">
-  <h2>Publications</h2>
-  <ul id="orcid-publications">
-    <li>Loading publications from ORCID…</li>
-  </ul>
+  <div class="main-container">
+    <h2>Publications</h2>
+    <ul id="orcid-publications">
+      <li>Loading publications from ORCID…</li>
+    </ul>
+  </div>
 </section>
 
 <script>
@@ -12,27 +14,48 @@
 
   try {
     const response = await fetch(url, { headers: { "Accept": "application/json" }});
+    if (!response.ok) throw new Error("ORCID API fetch failed");
+    
     const data = await response.json();
-
     const list = document.getElementById("orcid-publications");
     list.innerHTML = "";
 
-    // loop through ORCID works
-    data.group.forEach(work => {
+    // 1. Safely map the data
+    let publications = data.group.map(work => {
       const summary = work["work-summary"][0];
-      const title = summary["title"]["title"].value;
-      const year = summary["publication-date"]?.year?.value || "n.d.";
-      const url = summary["external-ids"]["external-id"][0]?.["external-id-url"]?.value || null;
+      
+      // Safely check for title and year
+      const title = summary?.title?.title?.value || "Untitled";
+      const year = summary?.["publication-date"]?.year?.value || "0";
+      
+      // Safely check for external URLs (prevents the crash)
+      const extIds = summary?.["external-ids"]?.["external-id"] || [];
+      const urlObj = extIds.find(id => id["external-id-url"]?.value);
+      const workUrl = urlObj ? urlObj["external-id-url"].value : null;
 
+      return { title, year, workUrl };
+    });
+
+    // 2. Sort publications by year (newest first)
+    publications.sort((a, b) => parseInt(b.year) - parseInt(a.year));
+
+    // 3. Render the list
+    publications.forEach(pub => {
+      const displayYear = pub.year === "0" ? "n.d." : pub.year;
       const li = document.createElement("li");
-      li.innerHTML = `<strong>${title}</strong> (${year})${url ? ` – <a href="${url}" target="_blank">Link</a>` : ""}`;
+      
+      // Add a little breathing room between items
+      li.style.marginBottom = "0.75rem"; 
+      
+      // Included security best practices (rel="noopener noreferrer") for external links
+      li.innerHTML = `<strong>${pub.title}</strong> (${displayYear})${pub.workUrl ? ` – <a href="${pub.workUrl}" target="_blank" rel="noopener noreferrer">View Paper</a>` : ""}`;
       list.appendChild(li);
     });
+
   } catch (err) {
     console.error("ORCID fetch error:", err);
     document.getElementById("orcid-publications").innerHTML =
-      "<li>Could not load publications from ORCID.</li>";
+      "<li>Could not load publications right now.</li>";
   }
 })();
 </script>
-
