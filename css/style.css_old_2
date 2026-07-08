@@ -1,21 +1,11 @@
-/* 1. Global Box-Sizing Reset (Crucial for layout limits) */
-* {
-  box-sizing: border-box;
-}
-
-/* 2. Body Reset (Removes default browser spacing) */
 body { 
   background: #f9f9f9; 
-  margin: 0;
-  padding: 0;
 }
-
 section { border-bottom: 1px solid #ccc; }
 a { color: #0366d6; }
 
-/* 3. The Master Wrapper */
 .main-container {
-  max-width: 1000px;  /* Updated to your 1000px preference! */
+  max-width: 1000px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -130,7 +120,7 @@ a { color: #0366d6; }
   display: block;
   margin-top: 1rem;
   margin-bottom: 2rem;
-  border-radius: 8px;
+  border-radius: 8px;     /* Optional: gives the diagram slightly rounded corners */
 }
 
 .content-img-fade {
