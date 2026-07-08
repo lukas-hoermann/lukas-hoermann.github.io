@@ -105,23 +105,24 @@ a { color: #0366d6; }
   }
 }
 
-.full-width-img {
-  width: 100vw;
-  max-width: 100vw;
+/* Controls the max width of the title, image, and text altogether */
+.content-wrapper {
+  max-width: 800px;       /* Set this to whatever width you prefer */
+  margin: 0 auto;         /* Perfectly centers the column on the page */
+  padding: 0 20px;        /* Adds a little breathing room on mobile screens */
+}
+
+/* Forces the image to exactly match the width of the wrapper */
+.content-img {
+  width: 100%;
   height: auto;
-  
-  /* The new centering technique */
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  
   display: block;
   margin-top: 1rem;
   margin-bottom: 2rem;
+  border-radius: 8px;     /* Optional: gives the diagram slightly rounded corners */
 }
 
-/* Optional: Ensure the profile text doesn't stretch too wide for easy reading */
+/* Ensure the profile text doesn't have any strange margins overriding the wrapper */
 .profile {
-  max-width: 1200px;                 /* Adjust this number based on your layout preference */
-  margin: 0 auto;                   /* Centers the text block on the page */
+  width: 100%;
 }
