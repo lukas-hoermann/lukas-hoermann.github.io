@@ -1,4 +1,9 @@
-body { background: #f9f9f9; }
+body { 
+  background: #f9f9f9; 
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 section { border-bottom: 1px solid #ccc; }
 a { color: #0366d6; }
 
@@ -103,13 +108,6 @@ a { color: #0366d6; }
     background: #ffb24d;
     color: #ffffff;
   }
-}
-
-/* Controls the max width of the title, image, and text altogether */
-.content-wrapper {
-  max-width: 800px;       /* Set this to whatever width you prefer */
-  margin: 0 auto;         /* Perfectly centers the column on the page */
-  padding: 0 20px;        /* Adds a little breathing room on mobile screens */
 }
 
 /* Forces the image to exactly match the width of the wrapper */
