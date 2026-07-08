@@ -106,13 +106,18 @@ a { color: #0366d6; }
 }
 
 .full-width-img {
-  width: 100vw;                     /* Forces width to 100% of the viewport (screen) */
-  max-width: 100vw;                 /* Prevents standard max-width constraints */
-  height: auto;                     /* Keeps the SVG scaling proportionally */
-  margin-left: calc(-50vw + 50%);   /* Centers it and breaks out of parent padding */
+  width: 100vw;
+  max-width: 100vw;
+  height: auto;
+  
+  /* The new centering technique */
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  
   display: block;
-  margin-top: 1rem;                 /* Adds a little breathing room below the title */
-  margin-bottom: 2rem;              /* Adds breathing room above the text */
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 
 /* Optional: Ensure the profile text doesn't stretch too wide for easy reading */
