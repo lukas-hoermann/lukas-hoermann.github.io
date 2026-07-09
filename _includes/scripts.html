@@ -1,0 +1,70 @@
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const projectCards = document.querySelectorAll('.project');
+    
+    projectCards.forEach(card => {
+      card.addEventListener('click', function(e) {
+        // Ignore clicks if the user is clicking a direct link inside the card
+        if (e.target.tagName.toLowerCase() === 'a') return;
+        
+        const isAlreadyExpanded = this.classList.contains('expanded');
+        
+        // Collapse all cards first
+        projectCards.forEach(c => c.classList.remove('expanded'));
+        
+        // Expand the clicked card if it wasn't already expanded
+        if (!isAlreadyExpanded) {
+          this.classList.add('expanded');
+        }
+      });
+    });
+  });
+</script>
+
+<script>
+(async function() {
+  const orcid = "0000-0003-4150-1592";
+  const url = `https://pub.orcid.org/v3.0/${orcid}/works`;
+
+  try {
+    const response = await fetch(url, { headers: { "Accept": "application/json" }});
+    if (!response.ok) throw new Error("ORCID API fetch failed");
+    
+    const data = await response.json();
+    const list = document.getElementById("orcid-publications");
+    
+    // Clear the "Loading..." message
+    list.innerHTML = "";
+
+    // Safely map and extract the data
+    let publications = data.group.map(work => {
+      const summary = work["work-summary"][0];
+      const title = summary?.title?.title?.value || "Untitled";
+      const year = summary?.["publication-date"]?.year?.value || "0";
+      
+      const extIds = summary?.["external-ids"]?.["external-id"] || [];
+      const urlObj = extIds.find(id => id["external-id-url"]?.value);
+      const workUrl = urlObj ? urlObj["external-id-url"].value : null;
+      
+      return { title, year, workUrl };
+    });
+
+    // Sort publications by year (newest first)
+    publications.sort((a, b) => parseInt(b.year) - parseInt(a.year));
+
+    // Render the list to the page
+    publications.forEach(pub => {
+      const displayYear = pub.year === "0" ? "n.d." : pub.year;
+      const li = document.createElement("li");
+      li.style.marginBottom = "0.75rem"; 
+      li.innerHTML = `<strong>${pub.title}</strong> (${displayYear})${pub.workUrl ? ` – <a href="${pub.workUrl}" target="_blank" rel="noopener noreferrer">View Paper</a>` : ""}`;
+      list.appendChild(li);
+    });
+
+  } catch (err) {
+    console.error("ORCID fetch error:", err);
+    document.getElementById("orcid-publications").innerHTML =
+      "<li>Could not load publications right now.</li>";
+  }
+})();
+</script>

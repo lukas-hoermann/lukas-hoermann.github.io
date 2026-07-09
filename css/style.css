@@ -15,7 +15,7 @@ a { color: #0366d6; }
 
 /* 3. The Master Wrapper */
 .main-container {
-  max-width: 1000px;  /* Updated to your 1000px preference! */
+  max-width: 1000px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -24,6 +24,8 @@ a { color: #0366d6; }
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
+  /* Automatically packs smaller tiles into gaps left by expanded tiles */
+  grid-auto-flow: dense; 
 }
 
 .project {
@@ -31,7 +33,25 @@ a { color: #0366d6; }
   padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.08);
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s, grid-column 0.2s;
+  
+  /* Structural updates for the expanding click effect */
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+/* The expanded state (only applies on screens wide enough to have 2 columns) */
+@media (min-width: 650px) {
+  .project.expanded {
+    grid-column: span 2;
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  }
+  
+  .project.expanded img {
+    max-height: 350px;
+  }
 }
 
 /* Links in content */
@@ -47,6 +67,10 @@ a { color: #0366d6; }
   text-decoration: none;
   font-weight: bold;
   transition: color 0.2s;
+  
+  /* Keeps links clickable without triggering the card expansion */
+  position: relative;
+  z-index: 2;
 }
 
 .project a:hover {
@@ -75,6 +99,7 @@ a { color: #0366d6; }
   height: auto;      /* keep aspect ratio */
   object-fit: cover; /* optional: crop instead of squish */
   border-radius: 8px;
+  transition: max-height 0.2s ease;
 }
 
 /* Dark mode overrides */
