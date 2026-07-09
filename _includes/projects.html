@@ -9,13 +9,19 @@
         <h3>Structure and stability of defective 2D materials</h3>
         <img src="images/phase_diagram.svg" alt="Compositional phase diagram of nitrogen-doped graphene">
         <p>
-          Developing equivariant neural network potentials trained on first-principles data to perform high-throughput simulations of 2D materials.
+          Developing machine learning models trained on first-principles data to perform high-throughput simulations of 2D materials.
           <span class="expand-hint">Click to read more...</span>
         </p>
         
         <div class="project-details">
-          <p><strong>Methodology:</strong> By utilizing Machine Learning Interatomic Potentials (MLIPs), we can drastically reduce the computational resources required compared to standard DFT methods...</p>
-          <a href="#" target="_blank">View GitHub Repo</a>
+          <p><strong>Structure and thermodynamics of 2D materials:</strong> 
+            Graphene has been studied extensively because of its exceptional mechanical, electrical, and thermal properties. Introducing dopants and lattice defects provides a powerful route to tailoring these properties for applications in electronics, sensing, and catalysis. Rational design of graphene-based materials therefore requires precise control over the type, concentration, and spatial arrangement of defects, which in turn demands a fundamental understanding of their thermodynamic stability and interactions within extended defect superstructures.
+
+            Achieving this understanding requires first-principles simulations of graphene surface structures. However, the enormous configurational space of possible defect arrangements makes exhaustive first-principles calculations computationally prohibitive. Machine learning approaches, such as Bayesian linear regression and equivariant neural networks, provide accurate surrogate models for the energies and forces of 2D structures, enabling efficient exploration of complex defect landscapes.
+
+            Beyond this, finite-temperature effects play a crucial role in determining the structure and stability of two-dimensional materials. Thermal fluctuations and entropic contributions must therefore be taken into account. By constructing the partition function, thermodynamic properties such as the free energy, internal energy, entropy, and heat capacity can be derived.
+          </p>
+          <a href="#" target="https://arxiv.org/abs/2509.08352">Thermodynamics doped graphene</a>
         </div>
       </div>
 
@@ -28,7 +34,12 @@
         </p>
         
         <div class="project-details">
-          <p><strong>Key Findings:</strong> This research focuses on the non-adiabatic dynamics of energy transfer...</p>
+          <p><strong>Understanding energy dissipation at the atomic scale:</strong>
+            The motion of individual molecules on surfaces is governed by their atomic structure and their interaction with the underlying material. When molecules vibrate—either through mechanical manipulation with an atomic force microscope or external excitation—they transfer energy to the electrons and atomic vibrations (phonons) of the surface. This energy dissipation determines how long molecular vibrations persist and plays a central role in nanoscale friction, molecular manipulation, and the interpretation of scanning probe microscopy and surface spectroscopy experiments.
+
+            Our research combines first-principles simulations with theoretical modelling to understand these processes in single-molecule junctions. Using carbon monoxide (CO) molecules attached to copper tips as a model system, we show that both the geometry of the tip and the coupling between molecular vibrations, substrate phonons, and electrons strongly influence how vibrational energy is dissipated. We find that atomic-scale changes in tip structure can alter vibrational lifetimes by orders of magnitude and reveal how electronic and vibrational interactions work together to control energy flow. These insights provide a fundamental understanding of non-equilibrium processes at surfaces and help guide the design of experiments and nanoscale devices where energy dissipation is a key factor.
+          </p>
+          <a href="#" target="https://pubs.acs.org/doi/full/10.1021/jacsau.5c00931">Energy dissipation in single-molecule junctions</a>
         </div>
       </div>
       
@@ -41,7 +52,12 @@
         </p>
         
         <div class="project-details">
-          <p>Add your extra paragraphs, links, or even additional images here!</p>
+          <p><strong>Atomic-scale friction on chemical bonds:</strong>
+            Friction influences everything from large-scale engineering systems to the operation of nanoscale devices, yet its microscopic origins remain incompletely understood. By using an atomic force microscope with a tip terminated by a single atom, we can probe friction at its most fundamental level. Oscillating the tip laterally across individual chemical bonds allows us to directly measure the energy dissipated during sliding with atomic precision.
+
+            Combining these experiments with first-principles simulations, we investigate how the chemical nature of a bond influences friction. Our results show that friction varies significantly even between different aromatic bonds, where it is closely linked to bond order and the distribution of electron density. We also compare aromatic and hydrogen bonds, revealing that similar amounts of friction can arise through different microscopic mechanisms. These insights establish a direct connection between chemical bonding and energy dissipation, providing new strategies for tailoring friction through atomic-scale materials design.
+          </p>
+          <a href="#" target="https://www.nature.com/articles/s41467-026-72128-x">Sliding friction correlates with bond order</a>
         </div>
       </div>
       
@@ -54,7 +70,11 @@
         </p>
         
         <div class="project-details">
-          <p>SAMPLE is the world's first quasi-deterministic structure prediction code for two-dimensional structures, allowing for active learning workflows...</p>
+          <p><strong>Predicting molecular self-assembly on surfaces:</strong>
+            Organic molecules deposited on solid surfaces can spontaneously assemble into a wide variety of ordered structures. Predicting which patterns will form is a fundamental challenge in surface science because the number of possible molecular arrangements grows rapidly with system size, making exhaustive first-principles calculations computationally infeasible.
+
+            To address this challenge, we developed SAMPLE (Surface Adsorbate Machine Learning for Pattern and Landscape Exploration), a computational framework that combines coarse-grained modelling, machine learning, and first-principles calculations. Using Bayesian linear regression as an efficient surrogate model, SAMPLE rapidly identifies stable molecular arrangements and, together with ab initio thermodynamics, predicts phase diagrams across a range of experimental conditions. We demonstrated the approach for naphthalene on Cu(111), where the predicted surface structures show excellent agreement with experimental observations. SAMPLE enables the efficient exploration of complex molecular self-assembly and provides a powerful tool for the computational design of functional organic interfaces.
+          </p>
         </div>
       </div>
 
