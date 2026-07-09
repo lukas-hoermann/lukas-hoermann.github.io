@@ -175,3 +175,41 @@ a { color: #0366d6; }
 .profile {
   width: 100%;
 }
+
+/* Hide the extra details by default */
+.project-details {
+  display: none;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+/* Show the extra details only when the card is expanded */
+.project.expanded .project-details {
+  display: block;
+  animation: fadeIn 0.3s ease-in;
+}
+
+/* A tiny hint text that hides itself when the card opens */
+.expand-hint {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.85em;
+  color: #666;
+  font-style: italic;
+}
+.project.expanded .expand-hint {
+  display: none;
+}
+
+/* Smooth fade-in animation for the text */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* (Optional dark mode fix for the border) */
+@media (prefers-color-scheme: dark) {
+  .project-details { border-top: 1px solid #444; }
+  .expand-hint { color: #aaa; }
+}
