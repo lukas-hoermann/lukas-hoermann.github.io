@@ -84,6 +84,13 @@ a { color: #0366d6; }
   color: #0366d6;
 }
 
+.project h4 {
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+  color: #0366d6;
+}
+
+
 /* Contact buttons */
 .contact-links a {
   background: #0366d6;
@@ -125,6 +132,10 @@ a { color: #0366d6; }
   }
 
   .project h3 {
+    color: #ff9800;
+  }
+
+  .project h4 {
     color: #ff9800;
   }
 
