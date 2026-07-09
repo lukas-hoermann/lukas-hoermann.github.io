@@ -5,7 +5,7 @@
     projectCards.forEach(card => {
       card.addEventListener('click', function(e) {
         // Ignore clicks if the user is clicking a direct link inside the card
-        if (e.target.tagName.toLowerCase() === 'a') return;
+        if (e.target.closest('a')) return;
         
         const isAlreadyExpanded = this.classList.contains('expanded');
         
